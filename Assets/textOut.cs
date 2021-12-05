@@ -8,11 +8,21 @@ public class textOut : MonoBehaviour
 {
     Text text;
     string str;
+    public float time;
+
     void Start()
     {
         text = this.GetComponent<Text>();
         str = text.text;
         text.text = "";
-        text.DOText(str, 10f);
+        if (time == 0)
+        {
+            text.DOText(str, 10f);
+        }
+        else 
+        {
+            text.DOText(str, time);
+        }
+
     }
 }
